@@ -1,6 +1,6 @@
 var BigNumber = require('bignumber.js')
 
-exports.convert64 = function (steamid, callback) {
+exports.convertTo64 = function (steamid, callback) {
   var x = BigNumber('76561197960265728')
     , err = null
     , sid
