@@ -1,0 +1,19 @@
+{
+  "name": "steamidconvert",
+  "version": "0.0.0",
+  "description": "convert 64 bit steam id to text readable format",
+  "main": "steamidconvert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "dependencies": {
+    "bignumber.js": "1.0.x"
+  },
+  "keywords": [
+    "steam",
+    "steamid"
+  ],
+  "author": "babofitos",
+  "license": "BSD"
+}
