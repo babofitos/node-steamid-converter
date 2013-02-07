@@ -1,6 +1,6 @@
 # SteamID Converter
 
-Convert 64bit SteamID to text-readable STEAM_x:y:z format
+A module for node that converts a 64bit SteamID to a text STEAM_x:y:z format
 
 ```js
 npm install steamidconvert
