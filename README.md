@@ -1,4 +1,6 @@
+```js
 npm install steamidconvert
+```
 
 ```js
 var steam = require('steamidconvert')
