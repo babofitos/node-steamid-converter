@@ -1,6 +1,6 @@
 var BigNumber = require('bignumber.js')
 
-exports.convertTo64 = function (steamid, callback) {
+exports.convertTo64 = function (steamid) {
   var x = BigNumber('76561197960265728')
     , err = null
     , sid
@@ -15,13 +15,12 @@ exports.convertTo64 = function (steamid, callback) {
     err = e
   }
   finally {
-    if (typeof callback === 'function') {
-      callback(err, sid)
-    }
+    if (err) return err
+    else return sid
   }
 }
 
-exports.convertToText = function(steamid64, callback) {
+exports.convertToText = function(steamid64) {
   var w
     , x = BigNumber('76561197960265728')
     , y = 0
@@ -47,8 +46,7 @@ exports.convertToText = function(steamid64, callback) {
     err = e.message
   }
   finally {
-    if (typeof callback === 'function') {
-      callback(err, out.join(':'))
-    }
+    if (err) return err
+    else return out.join(':')
   }
 }
