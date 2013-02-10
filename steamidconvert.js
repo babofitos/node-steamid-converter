@@ -35,7 +35,7 @@ exports.convertToText = function(steamid64) {
     if (w.mod(2).toPrecision(1) === '1') y = 1
     out.push(y)
     sid = w.minus(y).minus(x).div(2).toPrecision(17)
-    sid = sid.substring(0, sid.indexOf('.'))
+    sid = parseInt(sid, 10)
     if (sid) {
       out.push(sid)
     } else {
