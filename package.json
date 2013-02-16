@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babofitos/node-steamid-converter.git"
+  },
   "dependencies": {
     "bignumber.js": "1.0.x"
   },
