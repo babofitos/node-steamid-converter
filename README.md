@@ -30,6 +30,6 @@ This is for converting custom URLs to SteamID64
 var steam = require('steamidconvert')(/*your steam api key*/)
 steam.convertVanity('panvertigo', function(err, res) {
   if (err) console.log(err)
-  else console.log(res) 76561198000670105
+  else console.log(res) //76561198000670105
 })
 ```
