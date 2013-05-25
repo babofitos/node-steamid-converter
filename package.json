@@ -1,6 +1,6 @@
 {
   "name": "steamidconvert",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "convert 64 bit steam id to text readable format",
   "main": "index.js",
   "scripts": {

@@ -34,10 +34,10 @@ SteamConvert.prototype.convertVanity = function(base, cb) {
         response = JSON.parse(output).response
       }
       catch (e) {
-        throw new Error('Invalid key')
+        return cb(new Error('Invalid key'))
       }
-      if ( !response || response.success !== 1) cb('Unsuccessful call to api')
-      else cb(null, response.steamid)
+      if ( !response || response.success !== 1) return cb(new Error('Unsuccessful call to api'))
+      else return cb(null, response.steamid)
     })
   })
 }
