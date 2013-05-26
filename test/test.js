@@ -8,12 +8,61 @@ describe('steamidconvert', function() {
       var res = steam.convertTo64('STEAM_0:1:82174')
       assert(res === '76561197960430077')
     })
+    it('should have an argument', function() {
+      assert.throws(steam.convertTo64, /SteamID argument required/)
+    })
+    it('should be a string', function() {
+      assert.throws(function() {
+        steam.convertTo64(1)
+      }, 
+        /SteamID must be a string/
+      )
+    })
+    it('should be a valid steamid', function() {
+      assert.throws(function() {
+        steam.convertTo64('1')
+      }, 
+        /Invalid SteamID/
+      )
+      assert.throws(function() {
+        steam.convertTo64('STEAM_0:1')
+      }, 
+        /Invalid SteamID/
+      )
+      assert.throws(function() {
+        steam.convertTo64('STEAM_1:112345')
+      }, 
+        /Invalid SteamID/
+      )
+    })
   })
 
   describe('.convertToText(sid64)', function() {
     it('should convert steamid64 to steamid', function() {
       var res = steam.convertToText('76561197960430077')
       assert(res === 'STEAM_0:1:82174')
+    })
+    it('should have an argument', function() {
+      assert.throws(steam.convertToText, /SteamID64 argument required/)
+    })
+    it('should be a string', function() {
+      assert.throws(function() {
+        steam.convertToText(1)
+      }, 
+        /SteamID must be a string/
+      )
+    })
+    it('should be a valid steamid64', function() {
+      assert.throws(function() {
+        steam.convertToText('1')
+      }, 
+        /Invalid SteamID/
+      )
+      assert.throws(function() {
+        steam.convertToText('92830129381029')
+      }, 
+        /Invalid SteamID/
+      )
     })
   })
 
