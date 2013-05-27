@@ -4,7 +4,7 @@
   "description": "convert 64 bit steam id to text readable format",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*.js"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "bignumber.js": "1.0.x"
+  },
+  "devDependencies": {
+    "mocha": "*"
   },
   "keywords": [
     "steam",
