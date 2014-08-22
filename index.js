@@ -130,3 +130,24 @@ SteamConvert.prototype.convertToText = function(steamid64) {
     }
   }
 }
+
+SteamConvert.prototype.convertToNewFormat = function(steamid) {
+  if (!steamid) {
+      throw new ReferenceError('SteamID argument required')
+  }
+
+  if (typeof steamid !== 'string') {
+    throw new TypeError('SteamID must be a string')
+  }
+
+  var oldSID = steamid.split(':')
+
+  if (oldSID.length !== 3) {
+    throw new Error('Invalid SteamID')
+  }
+  
+  var newID = parseInt(oldSID[2], 10) * 2 + parseInt(oldSID[1], 10)
+    , result = "[U:1:" + newID.toString() + "]"
+
+  return result
+}

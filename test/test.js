@@ -92,4 +92,38 @@ describe('steamidconvert', function() {
       })
     })
   })
+
+  describe('.convertToNewFormat(sid)', function() {
+    it('should convert old steamid to new steamid format', function() {
+      var res = steam.convertToNewFormat('STEAM_0:1:82174')
+      assert(res === '[U:1:164349]')
+    })
+    it('should have an argument', function() {
+      assert.throws(steam.convertToNewFormat, /SteamID argument required/)
+    })
+    it('should be a string', function() {
+      assert.throws(function() {
+        steam.convertToNewFormat(1)
+      }, 
+        /SteamID must be a string/
+      )
+    })
+    it('should be a valid steamid', function() {
+      assert.throws(function() {
+        steam.convertToNewFormat('1')
+      }, 
+        /Invalid SteamID/
+      )
+      assert.throws(function() {
+        steam.convertToNewFormat('STEAM_0:1')
+      }, 
+        /Invalid SteamID/
+      )
+      assert.throws(function() {
+        steam.convertToNewFormat('STEAM_1:112345')
+      }, 
+        /Invalid SteamID/
+      )
+    })
+  })
 })
