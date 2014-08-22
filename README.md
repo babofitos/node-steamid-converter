@@ -33,3 +33,8 @@ steam.convertVanity('panvertigo', function(err, res) {
   else console.log(res) //76561198000670105
 })
 ```
+
+Convert old SteamID to new SteamID format
+```js
+steam.convertToNewFormat('STEAM_0:1:82174') //[U:1:164349]
+```
