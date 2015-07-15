@@ -13,13 +13,13 @@ var steam = require('steamidconvert')()
 Convert SteamID into SteamID64
 
 ```js
-steam.convertTo64('STEAM_0:1:82174') //76561197960430077
+steam.convertTo64('STEAM_0:0:6114800') //76561197972495328
 ```
 
 Convert SteamID64 into SteamID
 
 ```js
-steam.convertToText('76561197960430077') //STEAM_0:1:82174 
+steam.convertToText('76561197972495328') //STEAM_0:0:6114800
 ```
 
 Convert Vanity into SteamID64
@@ -36,5 +36,5 @@ steam.convertVanity('panvertigo', function(err, res) {
 
 Convert old SteamID to new SteamID format
 ```js
-steam.convertToNewFormat('STEAM_0:1:82174') //[U:1:164349]
+steam.convertToNewFormat('STEAM_0:0:6114800') //[U:1:12229600]
 ```
