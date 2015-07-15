@@ -5,8 +5,8 @@ var steam = require('../index.js')()
 describe('steamidconvert', function() {
   describe('.convertTo64(sid)', function() {
     it('should convert steamid to steamid64', function() {
-      var res = steam.convertTo64('STEAM_0:1:82174')
-      assert(res === '76561197960430077')
+      var res = steam.convertTo64('STEAM_0:0:6114800')
+      assert(res === '76561197972495328')
     })
     it('should have an argument', function() {
       assert.throws(steam.convertTo64, /SteamID argument required/)
@@ -39,8 +39,8 @@ describe('steamidconvert', function() {
 
   describe('.convertToText(sid64)', function() {
     it('should convert steamid64 to steamid', function() {
-      var res = steam.convertToText('76561197960430077')
-      assert(res === 'STEAM_0:1:82174')
+      var res = steam.convertToText('76561197972495328')
+      assert(res === 'STEAM_0:0:6114800')
     })
     it('should have an argument', function() {
       assert.throws(steam.convertToText, /SteamID64 argument required/)
@@ -95,8 +95,8 @@ describe('steamidconvert', function() {
 
   describe('.convertToNewFormat(sid)', function() {
     it('should convert old steamid to new steamid format', function() {
-      var res = steam.convertToNewFormat('STEAM_0:1:82174')
-      assert(res === '[U:1:164349]')
+      var res = steam.convertToNewFormat('STEAM_0:0:6114800')
+      assert(res === '[U:1:12229600]')
     })
     it('should have an argument', function() {
       assert.throws(steam.convertToNewFormat, /SteamID argument required/)
